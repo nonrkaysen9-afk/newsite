@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤠 СЕКРЕТНОЕ ДОСЬЕ: СИНДИКАТ «БЕРМУДСКИЙ ТРЕУГОЛЬНИК» // КУРСК</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Special+Elite&display=swap');
+
+        :root {
+            --wood-dark: #1e1105;
+            --paper-dark: #ecd3a5;
+            --paper-light: #f9f1df;
+            --wanted-red: #9e2515;
+            --gold: #c38b16;
+            --text-dark: #351f0b;
+            --border-style: 4px solid var(--text-dark);
+        }
+
+        /* Интро заставка */
+        #intro-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, #3a220e 0%, #0d0702 100%);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #intro-overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .intro-gate {
+            background: #e4c28c;
+            border: 10px double var(--text-dark);
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.4);
+            max-width: 500px;
+            width: 90%;
+            transform: rotate(-1deg);
+        }
+
+        .intro-title {
+            font-size: 32px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: bold;
+            color: var(--wanted-red);
+            text-shadow: 1px 1px 0px #000;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .intro-btn {
+            background: var(--wanted-red);
+            border: 3px solid #000;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 3px 3px 0 #000;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: 0.1s;
+        }
+
+        .intro-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #000;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #150a02 url('https://www.transparenttextures.com/patterns/dark-wood.png');
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 15px;
+            line-height: 1.5;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto 30px;
+            background: var(--paper-dark) url('https://www.transparenttextures.com/patterns/old-map.png');
+            border: 10px double var(--text-dark);
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 60px rgba(94,58,20,0.25);
+            position: relative;
+        }
+
+        header::before,
+        header::after {
+            content: '★';
+            position: absolute;
+            top: 14px;
+            color: var(--gold);
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        header::before { left: 20px; }
+        header::after { right: 20px; }
+
+        h1 {
+            font-size: 30px;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--wanted-red);
+            margin: 0 0 10px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px #fff, 2px 2px 0px rgba(0,0,0,0.15);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            font-style: italic;
+            font-weight: bold;
+            color: #513317;
+            margin: 0;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 22px;
+            background: linear-gradient(180deg, #4a2a0f 0%, #2e1808 100%);
+            color: var(--paper-light);
+            text-align: center;
+            padding: 12px;
+            border: 3px solid #1a0e05;
+            border-left: 6px solid var(--gold);
+            border-right: 6px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            margin-top: 40px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 0px #000;
+        }
+
+        /* Таблица баз */
+        .base-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background: var(--paper-light);
+            border: 6px double var(--text-dark);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .base-table th, .base-table td {
+            border: 1px solid rgba(58, 37, 18, 0.3);
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .base-table th {
+            background-color: var(--paper-dark);
+            color: var(--wanted-red);
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--text-dark);
+        }
+
+        /* Сетка WANTED */
+        .wanted-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .wanted-card {
+            background: var(--paper-dark) url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+            padding: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            border: 8px solid #ecd3a5;
+            outline: 4px solid var(--text-dark);
+            position: relative;
+            transform: rotate(calc(var(--r, 0) * 1deg));
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .wanted-card::after {
+            content: '';
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            border: 1px dashed rgba(158, 37, 21, 0.4);
+            pointer-events: none;
+        }
+
+        .wanted-card:hover {
+            transform: scale(1.04) rotate(0deg);
+            z-index: 5;
+            box-shadow: 8px 10px 25px rgba(0,0,0,0.6);
+        }
+
+        .wanted-card:nth-child(1) { --r: -1; }
+        .wanted-card:nth-child(2) { --r: 1.5; }
+        .wanted-card:nth-child(3) { --r: -1.5; }
+        .wanted-card:nth-child(4) { --r: 2; }
+        .wanted-card:nth-child(5) { --r: -2; }
+        .wanted-card:nth-child(6) { --r: 1; }
+
+        .wanted-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--wanted-red);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            border-bottom: 4px double var(--text-dark);
+        }
+
+        .avatar-placeholder {
+            width: 150px;
+            height: 150px;
+            border: 4px solid var(--text-dark);
+            margin: 0 auto 12px;
+            background-color: #cbab78;
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            filter: sepia(0.5) contrast(1.1);
+        }
+
+        .wanted-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a0f05;
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--text-dark);
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .wanted-desc {
+            font-size: 12px;
+            color: #442a12;
+            font-style: italic;
+            min-height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .reward {
+            font-size: 16px;
+            color: var(--wanted-red);
+            font-weight: bold;
+            border: 2px dashed var(--wanted-red);
+            padding: 3px;
+            background: rgba(158, 37, 21, 0.05);
+        }
+
+        /* --- ФИЛЬТР МИССИЙ ПО ОПАСНОСТИ --- */
+        .filter-container {
+            background: var(--paper-dark);
+            border: 4px solid var(--text-dark);
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        .filter-label {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-right: 15px;
+            color: var(--text-dark);
+        }
+
+        .filter-btn {
+            background: var(--paper-light);
+            border: 2px solid var(--text-dark);
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 3px;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 0px #000;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--wanted-red);
+            color: #fff;
+            box-shadow: 1px 1px 0px #000;
+            transform: translate(1px, 1px);
+        }
+
+        /* Сетка дел */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--paper-light) url('https://www.transparenttextures.com/patterns/groovepaper.png');
+            border: 4px solid var(--text-dark);
+            padding: 20px;
+            box-shadow: 6px 6px 0px #000;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px) rotate(-0.3deg);
+            box-shadow: 10px 12px 0px #000;
+            border-color: var(--wanted-red);
+        }
+
+        /* Скрытое состояние по дефолту фильтрации */
+        .project-card.hidden {
+            display: none !important;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--wanted-red);
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 5px;
+        }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        /* Выпадающая при ховере история */
+        .full-history {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.2s ease;
+            font-size: 12px;
+            color: #513317;
+            line-height: 1.4;
+            border-top: 1px dashed rgba(58, 37, 18, 0.3);
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .project-card:hover .full-history {
+            max-height: 350px;
+            opacity: 1;
+            margin-top: 12px;
+            padding-top: 8px;
+        }
+
+        .history-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--wanted-red);
+            margin-bottom: 4px;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .tags-container {
+            margin-top: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: bold;
+            background: #e4c28c;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            padding: 2px 6px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .tag.danger-low { background-color: #c2e5b7; }
+        .tag.danger-medium { background-color: #f7e6a5; }
+        .tag.danger-high { background-color: #f7ca9e; }
+        .tag.danger-insane { background-color: #f5b0ad; color: var(--wanted-red); border-color: var(--wanted-red); }
+
+        /* Плеер */
+        #music-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--paper-dark);
+            border: 3px solid var(--text-dark);
+            box-shadow: 4px 4px 0px #000;
+            padding: 10px 15px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        #music-panel button {
+            background: var(--wanted-red);
+            border: 2px solid var(--text-dark);
+            color: #fff;
+            padding: 4px 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        #music-panel button:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px #000;
+        }
+
+        #music-panel input[type="range"] {
+            cursor: pointer;
+            accent-color: var(--wanted-red);
+            width: 70px;
+        }
+
+        /* Перекати-поле */
+        #tumbleweed {
+            position: fixed;
+            bottom: -20px;
+            left: -150px;
+            width: 100px;
+            height: 100px;
+            background-image: url('tumbleweed.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1000;
+            pointer-events: none;
+            display: none;
+            mix-blend-mode: multiply;
+        }
+
+        @keyframes roll {
+            0% { transform: translateX(0) rotate(0deg); bottom: -10px; }
+            15% { bottom: 20px; }
+            30% { bottom: -10px; }
+            45% { bottom: 25px; }
+            60% { bottom: -10px; }
+            75% { bottom: 10px; }
+            100% { transform: translateX(calc(100vw + 200px)) rotate(1000deg); bottom: -10px; }
+        }
+
+        .rolling {
+            display: block !important;
+            animation: roll 7s linear forwards;
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 50px auto 0;
+            border-top: 4px double var(--text-dark);
+            padding-top: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #513317;
+            text-align: center;
+        }
+
+        .cheat-trigger {
+            background: none;
+            border: none;
+            color: #513317;
+            cursor: pointer;
+            text-decoration: underline;
+            font-family: inherit;
+            font-size: 10px;
+            margin-top: 10px;
+        }
+
+        /* Чит-стили */
+        body.cheat-baguvix .avatar-placeholder {
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 15px var(--gold), inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        body.cheat-baguvix .wanted-card {
+            border-color: var(--gold) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ИНТРО ЭКРАН -->
+    <div id="intro-overlay" onclick="startArchive()">
+        <div class="intro-gate">
+            <div class="intro-title">БЕРМУДСКИЙ СИНДИКАТ</div>
+            <p style="margin: 0; color: #442a12; font-weight: bold; font-size: 12px; text-transform: uppercase;">Курск // База данных обновлена (2026)</p>
+            <button class="intro-btn">🤠 ВОЙТИ В ШТАБ</button>
+        </div>
+    </div>
+
+    <!-- АУДИО -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ПЛЕЕР -->
+    <div id="music-panel">
+        <span>🎵 САУНДТРЕК</span>
+        <button id="play-btn" onclick="toggleMusic()">⏸ ПАУЗА</button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5" oninput="setVolume(this.value)">
+    </div>
+
+    <!-- АНИМАЦИЯ -->
+    <div id="tumbleweed"></div>
+
+    <header>
+        <h1>🤠 АРХИВ ДИКОГО ЗАПАДА // СИНДИКАТ «БЕРМУДСКИЙ ТРЕУГОЛЬНИК» 🤠</h1>
+        <p class="subtitle">Секретные дела, нападения на ульи, войны с лопатами и разборки с ФСБ. Все оперативники вооружены до зубов.</p>
+    </header>
+
+    <main>
+
+        <h2>👥 ЛИЧНЫЕ ДЕЛА ОПЕРАТИВНИКОВ (WANTED)</h2>
+        <div class="wanted-grid">
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('franklin.jpg');"></div>
+                <div class="wanted-name">Франклин</div>
+                <div class="wanted-desc">13 лет, 7 класс. Мастер паркура на бетонных паллетах и деревьях. Обладает абилкой "скип диалогов".</div>
+                <div class="reward" id="rew-franklin">Награда: $150,000</div>
+            </div>
+
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('michael.jpg');"></div>
+                <div class="wanted-name">Майкл</div>
+                <div class="wanted-desc">8 класс. Вламывается скрепками (уровень: Lishi KW1). Хранит опасные кружочки-компроматы в ТГ.</div>
+                <div class="reward" id="rew-michael">Награда: $145,000</div>
+            </div>
+
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('trevor.jpg');"></div>
+                <div class="wanted-name">Тревор</div>
+                <div class="wanted-desc">9 класс. Легенда резни, гроза подвальных стекол. Переехал на этаж выше Франклина, создав доминирование.</div>
+                <div class="reward" id="rew-trevor">Награда: $220,000</div>
+            </div>
+
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('egor.jpg');"></div>
+                <div class="wanted-name">Егор Башкирев</div>
+                <div class="wanted-desc">"Чешка". Локальный безумец на крыше гаража. Построил базу прямо у осиного логова.</div>
+                <div class="reward" id="rew-egor">Награда: $110,000</div>
+            </div>
+
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('yana.jpg');"></div>
+                <div class="wanted-name">Яна (Самовар)</div>
+                <div class="wanted-desc">Лидер девчачьей контрабанды бубликов. Шантажирует парней лимонадом.</div>
+                <div class="reward" id="rew-yana">Награда: $95,000</div>
+            </div>
+
+            <div class="wanted-card">
+                <div class="wanted-title">WANTED</div>
+                <div class="avatar-placeholder" style="background-image: url('ksusha.jpg');"></div>
+                <div class="wanted-name">Ксюша</div>
+                <div class="wanted-desc">Профессиональный отвлекатор внимания. Забалтывает NPC любого уровня опасности.</div>
+                <div class="reward" id="rew-ksusha">Награда: $90,000</div>
+            </div>
+        </div>
+
+        <h2>⛺ РЕЕСТР ОБОРОНИТЕЛЬНЫХ ШТАБОВ (БАЗЫ)</h2>
+        <table class="base-table">
+            <thead>
+                <tr>
+                    <th>База / Укрытие</th>
+                    <th>Локация и описание</th>
+                    <th>Уровень опасности и угрозы</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Штаб №1 "Основной Каркас"</strong></td>
+                    <td>Загаражье. Металлический скелет с клоповым диваном, матрасом и рисунками на стенах. Место пранка "Убийца из колонки".</td>
+                    <td>Клещи (Максимальный)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №2 "Недострой"</strong></td>
+                    <td>Около Основного Каркаса. Строительство было заморожено из-за атак враждебной бабки.</td>
+                    <td>Умеренный (Атака ПВО бабки)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №3 "Кирпичный Клондайк"</strong></td>
+                    <td>Около подвала в кустах между гаражами у дома Франклина. Очищенная пацанами гора кирпичей.</td>
+                    <td>Дохлые крысы, клещи (Высокий)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №4 "Крыша Егора"</strong></td>
+                    <td>Комфортный спот на гаражах прямо над зоной Башкирева. Оборудован мягкими матрасами.</td>
+                    <td>Безопасно (Комфорт 10/10)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №5 "Зимний Куст"</strong></td>
+                    <td>Бюджетная стоянка в сугробе из одной мокрой картонки.</td>
+                    <td>Холод, склероз (Низкий)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №6 "Эстакада"</strong></td>
+                    <td>Дальние гаражи под ремонтной эстакадой. Зона дислокации Тревора во время побегов.</td>
+                    <td>Патрули местных (Умеренный)</td>
+                </tr>
+                <tr>
+                    <td><strong>Штаб №7 "Оккупированный"</strong></td>
+                    <td>Точка, вероломно отжатая союзом Тревора и Сони у основного состава.</td>
+                    <td>Враждебная территория</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🗃️ ПОЛНЫЙ КРИМИНАЛЬНЫЙ АРХИВ ДЕЛ (24 МИССИИ)</h2>
+
+        <!-- ФИЛЬТРЫ -->
+        <div class="filter-container">
+            <span class="filter-label">Уровень опасности дел:</span>
+            <button class="filter-btn active" onclick="filterMissions('all')">Все дела</button>
+            <button class="filter-btn" onclick="filterMissions('low')">🟢 Низкий</button>
+            <button class="filter-btn" onclick="filterMissions('medium')">🟡 Средний</button>
+            <button class="filter-btn" onclick="filterMissions('high')">🔴 Высокий</button>
+            <button class="filter-btn" onclick="filterMissions('insane')">💀 БЕЗУМИЕ</button>
+        </div>
+
+        <div class="project-grid" id="missions-container">
+
+            <!-- МИССИЯ 1 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">1. Миссия «Помада»</div>
+                    <div class="project-desc">Разведка территории. Франклин и Майкл держат периметр на шухере, пока Тревор технично работает внутри.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Сначала прошли разведку территории. Затем на шухере встали Франклин и Майкл, палили округу на предмет свидетелей, пока Тревор внутри аккуратно сп**дил помаду. Весь лут был передан Ксюше без вопросов и комиссии.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Налёт</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 2 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">2. Конфетный Рейд</div>
+                    <div class="project-desc">Дело раньше «Помады». Ксюша отвлекает продавца, пока Франклин и Тревор набивают карманы.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Схема отвлечения сработала идеально. Ксюша заговаривала зубы у прилавка, пока Франклин и Тревор набивали карманы шоколадным хабаром. Весь спи**енный лут переправили в общагу и спрятали на 10 этаже.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Кража</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 3 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">3. Сейф Дани</div>
+                    <div class="project-desc">Вынос стального сейфа из вскрытого подвала силами Дани, Димы и Богдана.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Самое раннее из известных дел синдиката. Даня привёл подмогу — Диму и Богдана. Втроём они на руках вытащили тяжеленный сейф из подвала, происхождение которого так и осталось загадкой.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Вынос сейфа</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 4 -->
+            <div class="project-card" data-danger="insane">
+                <div>
+                    <div class="project-title">4. Взлом подвала и порезы</div>
+                    <div class="project-desc">Франклин вскрывает навесной замок скрепкой. Тревор устраивает хаос с разбитым стеклом и ранением ног.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Франклин мастерски орудовал скрепкой, вскрывая подвальный замок. Тревор в это время решил ускорить процесс: взял камень и швырнул в подвальное стекло. Стекло разлетелось, он порезал ноги, истёк кровью и в панике убежал прятаться.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Взлом / Травма</span>
+                    <span class="tag danger-insane">Безумие</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 5 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">5. Великий побег Тревора</div>
+                    <div class="project-desc">Тревор сбегает из дома после разбитых стекол, объявляется план перехвата родителями и полицией.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        После инцидента с порезами Тревор скрылся в неизвестном направлении. Дома поднялась тревога, его искали по всем гаражам и эстакадам района. Несколько дней он жил на подпольном положении.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Побег</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 6 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">6. Ругань с бабкой у труб</div>
+                    <div class="project-desc">Война за территорию копания труб. Бабка распускает руки, на место вызывают городское ТВ.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Бабка что-то копала у себя с трубами и дико взбесилась, когда банда начала ошиваться рядом. Дело дошло до рукоприкладства — она реально била парней. Конфликт разросся до вызова репортёров, и синдикат благополучно влетел в кадр местных новостей как жертвы бабкиной агрессии.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Разборка с NPC</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 7 -->
+            <div class="project-card" data-danger="low">
+                <div>
+                    <div class="project-title">7. Наши Шалаши и Штабы</div>
+                    <div class="project-desc">Обустройство криминальных баз: на гараже, около подвала и в кустах между гаражами у дома Франклина.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Сеть штабов синдиката: гараж, подвал в кустах между корпусами, и точка прямо у дома Франклина. Здесь строились планы и здесь Майкл попадался на большинство пранков банды.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Штаб</span>
+                    <span class="tag danger-low">Низкий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 8 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">8. Инцидент «Стрелок-убийца»</div>
+                    <div class="project-desc">Легендарный пранк на главном штабе: инсценировка нападения стрелка через колонку, спрятанную за стеной.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Классика жанра. Из колонки, заранее спрятанной за стеной штаба, внезапно раздались звуки выстрелов и крики про нападение убийцы. Майкл купился полностью. Реакцию потом пересказывали годами.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Перестрелка</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 9 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">9. Угон лодочного мотора</div>
+                    <div class="project-desc">Локальная вендетта. Мужик швыряет лопату, банда красит его лавку и уводит мотор от лодки.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Франклин с Тревором дразнили агрессивного мужика, тот швырнул в них лопату. В ответ банда закрасила краской его любимую лавочку, а потом спи**ила его лодочный мотор. Франклина поймали на допросе, но он гениально отмазался.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Месть / Угон</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 10 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">10. Заброшенная военка</div>
+                    <div class="project-desc">Рейд на территорию заброшенной части, где сейчас строится военный госпиталь.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Опасная вылазка на закрытый объект. Туда ходили в основном со старшими пацанами, лазили по старым корпусам и скрывались от патрулей охраны.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Вылазка</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 11 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">11. Оккупация базы Соней</div>
+                    <div class="project-desc">Внутренний раскол. Тревор объединяется с Соней и отжимает центральный шалаш.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Внезапный удар в спину: Тревор дезертировал в девчачий синдикат и вместе с Соней оккупировал общий штаб, устроив там свои порядки и заблокировав вход истинным владельцам.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Захват базы</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 12 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">12. Инцидент с Региной</div>
+                    <div class="project-desc">Жесткие словесные перепалки и конфликты с местной жительницей Региной во дворах.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Затяжная уличная война. Постоянно орали друг на друга, кидались оскорблениями и строили мелкие пакости у её подъезда.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Конфликт</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 13 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">13. Инцидент с бомжем</div>
+                    <div class="project-desc">Каменный обстрел бездомного и эпичный побег от разъяренного преследователя.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Парни начали закидывать камнями спящего в кустах бездомного. Тот резко проснулся и с диким ревом побежал за вами через гаражи. Пришлось применить навыки спринта на максимум.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Погоня</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 14 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">14. Прятки с полицией</div>
+                    <div class="project-desc">Бомж сдает банду наряду ППС, обвинив их в домогательствах под предлогом игры в прятки.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Банда просто позвала бездомного поиграть в прятки, но тот испугался, остановил первый попавшийся патруль полиции и начал слезно жаловаться ментам.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Разборка с ППС</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 15 -->
+            <div class="project-card" data-danger="low">
+                <div>
+                    <div class="project-title">15. Лимонадный грабеж</div>
+                    <div class="project-desc">Тревор ворует газировку у Ксюши, положив начало долгой дружбе через ругань.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        В те времена банда ещё не была близко знакома с девчонками. Тревор внаглую спи**ил лимонад у Ксюши, завязалась дикая ссора, переросшая в итоге в крепкий дворовый союз.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Знакомство</span>
+                    <span class="tag danger-low">Низкий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 16 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">16. Война Тревора с бабушкой</div>
+                    <div class="project-desc">Постоянные внутрисемейные крики и скандалы Тревора с бабушкой на глазах у всего двора.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Тревор регулярно устраивал бунт против домашних правил, орал на весь двор, демонстративно уходил из дома, собирая толпы зрителей среди пацанов.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Семейные терки</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 17 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">17. Месть Одноглазого</div>
+                    <div class="project-desc">Враг по кличке "Одноглазый" уничтожает шалаши банды и пинает футбольный мяч.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Одноглазый мужик постоянно устраивал рейды на штабы банды, ломал доски, раскидывал картон и жестоко пинал их футбольный мяч, за что и получил свою кличку.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Враг банды</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 18 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">18. Тактика выжженной земли</div>
+                    <div class="project-desc">Дед Майкла радикально выжигает осиное гнездо на турниках, где выбивали ковры.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Осы окончательно обнаглели и оккупировали турники — те самые балки, где выбивали ковры. На помощь пришел дед Майкла: вооружился огнём и полностью спалил улей дотла. Осы капитулировали без вариантов.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Ликвидация ос</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 19 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">19. Палочные диверсии</div>
+                    <div class="project-desc">Пацаны тыкают палками в осиное гнездо на балке для ковров.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        До того как дед Майкла сжёг улей, банда развлекалась экстремальным спортом: совали длинные палки в гнездо на балке турника и с дикими криками разбегались от роя злых шершней.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Экстрим</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 20 -->
+            <div class="project-card" data-danger="low">
+                <div>
+                    <div class="project-title">20. Попрошайничество</div>
+                    <div class="project-desc">Тактический сбор мелочи у прохожих и иностранных темнокожих студентов.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Банда разворачивала операцию "мелочь на лимонад". Просили рубли у обычных прохожих, а также у приезжих темнокожих студентов из мединститута. Метод работал безотказно.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Фарм монет</span>
+                    <span class="tag danger-low">Низкий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 21 -->
+            <div class="project-card" data-danger="high">
+                <div>
+                    <div class="project-title">21. ДТП с бабкой на горке</div>
+                    <div class="project-desc">Зимний скоростной спуск, закончившийся жестким сбиванием пожилого NPC.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Банда летела с ледяной горки гурьбой на полной скорости. Внизу траекторию переходила бабка. Произошло неизбежное столкновение на полной скорости. Бабка кувырком, паника, побег с места ДТП.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Зимний инцидент</span>
+                    <span class="tag danger-high">Высокий</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 22 -->
+            <div class="project-card" data-danger="insane">
+                <div>
+                    <div class="project-title">22. Погоня агрессивных NPC</div>
+                    <div class="project-desc">Погоня под домом, спасение в толпе кентафуриков, зависание на дереве над бетонными паллетами.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        За Франклином погнались агрессивные мужики. Он прибежал во двор, где стояла толпа кентов и банды (добрые NPC), которые начали его отмазывать, мол "мы просто в прятки играем". Он пытался залезть на гараж через дерево, застрял на нём, и пришлось прыгать обратно на бетонные паллеты.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Паркур / Спасение</span>
+                    <span class="tag danger-insane">Безумие</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 23 -->
+            <div class="project-card" data-danger="insane">
+                <div>
+                    <div class="project-title">23. ФСБ и Скрутка Колпачков (2021-22)</div>
+                    <div class="project-desc">Рейды на ниппели у закрытого ларька. Теория заговора про серую машину ФСБ и побег в подъезд Франклина.</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Розыск 5 звёзд. Банда крутила цветные колпачки с колёс машин у ларька под домом Франклина (который сейчас закрылся). Кто-то из "банды анонимных воров" закричал, что серая тачка — это засада ФСБ. В панике все на полной скорости оббежали общагу и скрылись в подъезде Франклина.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">ФСБ / Колпачки</span>
+                    <span class="tag danger-insane">Безумие</span>
+                </div>
+            </div>
+
+            <!-- МИССИЯ 24 -->
+            <div class="project-card" data-danger="medium">
+                <div>
+                    <div class="project-title">24. Ловушка в разваливающемся гараже</div>
+                    <div class="project-desc">Франклин увлекся болтовней в старом гараже, банда закрыла его внутри "по приколу".</div>
+                    <div class="full-history">
+                        <div class="history-title">📜 ПОЛНАЯ ХРОНИКА ДЕЛА:</div>
+                        Франклин пи**ел в углу разваливающегося гаража, где была дырка в стене. Банда под предлогом "мусарни" отодвинула его, запустила внутрь и закрыла проход, оставшись ржать снаружи. Классическая подставa от своих же.
+                    </div>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">Пранк / Ловушка</span>
+                    <span class="tag danger-medium">Средний</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 1886 - 2026 Syndicate Archives. Все права защищены револьвером 45-го калибра.</p>
+        <button class="cheat-trigger" onclick="openCheatConsole()">⌨️ Ввести чит-код</button>
+    </footer>
+
+    <script>
+        var music = document.getElementById('bg-music');
+
+        function startArchive() {
+            music.volume = 0.5;
+            music.play().catch(function(e) {
+                console.log("Музыка заблокирована: ", e);
+            });
+            document.getElementById('intro-overlay').classList.add('fade-out');
+            setTimeout(spawnTumbleweed, 3000);
+        }
+
+        function spawnTumbleweed() {
+            var weed = document.getElementById('tumbleweed');
+            weed.classList.add('rolling');
+            weed.addEventListener('animationend', function() {
+                weed.classList.remove('rolling');
+                setTimeout(spawnTumbleweed, Math.floor(Math.random() * 15000) + 15000);
+            }, { once: true });
+        }
+
+        function toggleMusic() {
+            var btn = document.getElementById('play-btn');
+            if (music.paused) {
+                music.play();
+                btn.innerText = "⏸ ПАУЗА";
+            } else {
+                music.pause();
+                btn.innerText = "▶ ВОСПР.";
+            }
+        }
+
+        function setVolume(val) {
+            music.volume = val;
+        }
+
+        // --- СИСТЕМА ФИЛЬТРАЦИИ МИССИЙ ПО ОПАСНОСТИ ---
+        function filterMissions(dangerLevel) {
+            // Управление активными кнопками
+            var buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Фильтрация карточек
+            var cards = document.querySelectorAll('.project-card');
+            cards.forEach(function(card) {
+                if (dangerLevel === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    var cardDanger = card.getAttribute('data-danger');
+                    if (cardDanger === dangerLevel) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // --- ЧИТ-КОДЫ ---
+        let keyBuffer = "";
+        document.addEventListener('keydown', function(e) {
+            keyBuffer += e.key.toUpperCase();
+            if (keyBuffer.length > 15) {
+                keyBuffer = keyBuffer.substring(keyBuffer.length - 15);
+            }
+            checkCheats(keyBuffer);
+        });
+
+        function openCheatConsole() {
+            let code = prompt("Введите чит-код:");
+            if (code) {
+                checkCheats(code.toUpperCase());
+            }
+        }
+
+        function checkCheats(inputString) {
+            if (inputString.includes("BAGUVIX")) {
+                document.body.classList.toggle('cheat-baguvix');
+                let isGod = document.body.classList.contains('cheat-baguvix');
+                document.querySelectorAll('.reward').forEach(function(el) {
+                    el.innerText = isGod ? "Награда: $999,999,999" : "Награда: $150,000";
+                });
+                alert("РЕЖИМ БОГА СИНДИКАТА АКТИВИРОВАН!");
+                keyBuffer = "";
+            }
+            if (inputString.includes("ROCKETMAN")) {
+                spawnTumbleweed();
+                alert("ПЕРЕКАТИ-ПОЛЕ НА СВЯЗИ!");
+                keyBuffer = "";
+            }
+        }
+    </script>
+</body>
+</html>
